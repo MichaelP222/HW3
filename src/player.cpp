@@ -12,6 +12,9 @@ Player *newPlayer(std::string name, int num_goals){
 }
 
 Player *copyPlayer(const Player *p){
+    if (p == nullptr){
+        return nullptr;
+    }
     Player *copy_player = new Player;
     copy_player->name = p->name;
     copy_player->num_goals = p->num_goals;

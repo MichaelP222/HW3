@@ -79,7 +79,7 @@ void deleteQueue(Queue *q){
         return;
     while (q->head != nullptr) {
         LLNode *nextNode = q->head->next;
-        delete q->head;
+        deleteLLNode(q->head);
         q->head = nextNode;
     }
     q->tail = nullptr;
