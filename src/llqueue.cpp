@@ -47,9 +47,7 @@ void queuePopPlayerEntry(Queue *q){
         if (q->size == 0){
             q->tail = nullptr;
         }
-        temp->next = nullptr;
         deleteLLNode(temp);
-        temp = nullptr;
     }
 }
 
