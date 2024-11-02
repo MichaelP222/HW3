@@ -1,5 +1,5 @@
 // include the header file here
-#include "../include/llqueue.cpp"
+#include "../include/llqueue.h"
 
 // add all your llqueue functions in here.
 LLNode *newLLNode(Player *p){
@@ -79,7 +79,7 @@ void deleteQueue(Queue *q){
         return;
     while (q->head != nullptr) {
         LLNode *nextNode = q->head->next;
-        deleteLLNode(q->head);
+        delete q->head;
         q->head = nextNode;
     }
     q->back = nullptr;
