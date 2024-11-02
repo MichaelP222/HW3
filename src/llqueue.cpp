@@ -48,16 +48,22 @@ void queuePopPlayerEntry(Queue *q){
             q->tail = nullptr;
         }
         temp->next = nullptr;
-        delete temp;
-        temp = nullptr; 
+        deleteLLNode(temp);
+        temp = nullptr;
     }
 }
 
 Player *queueFront(Queue *q){
+    if (q->head == nullptr){
+        return nullptr;
+    }
     return q->head->entry;
 }
 
 Player *queueBack(Queue *q){
+    if (q->tail == nullptr){
+        return nullptr;
+    }
     return q->tail->entry;
 }
 
