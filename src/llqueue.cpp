@@ -39,7 +39,7 @@ void queuePushPlayerEntry(Queue *q, Player *entry){
 
 void queuePopPlayerEntry(Queue *q){
     if (q == nullptr || q->size == 0){
-        return
+        return;
     }else{
         LLNode *temp = q->head;
         q->head = q->head->next;
@@ -68,8 +68,8 @@ std::size_t queueSize(const Queue *q){
 void printQueue(const Queue *q){
     LLNode *tmp = q->head;
     while (tmp) {
-        std::cout << "Player name: " << tmp->name << std::endl;
-        std::cout << "Total goals: " << tmp->num_goals << std::endl;
+        std::cout << "Player name: " << tmp->entry->name << std::endl;
+        std::cout << "Total goals: " << tmp->entry->num_goals << std::endl;
         tmp=tmp->next;
     }
 }
@@ -82,6 +82,6 @@ void deleteQueue(Queue *q){
         delete q->head;
         q->head = nextNode;
     }
-    q->back = nullptr;
+    q->tail = nullptr;
     delete q; 
 }
